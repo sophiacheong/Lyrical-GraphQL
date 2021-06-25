@@ -2,13 +2,14 @@ const express = require('express');
 const models = require('./models');
 const expressGraphQL = require('express-graphql');
 const mongoose = require('mongoose');
+const token = require('../token.js');
 const bodyParser = require('body-parser');
 const schema = require('./schema/schema');
 
 const app = express();
-
+console.log(token);
 // Replace with your mongoLab URI
-const MONGO_URI = '';
+const MONGO_URI = `mongodb+srv://p00gz:${token}@cluster0.1wjg6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
