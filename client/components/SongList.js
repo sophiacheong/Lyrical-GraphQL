@@ -4,9 +4,9 @@ import { graphql } from 'react-apollo';
 
 class SongList extends Component {
   renderSongs() {
-    return this.props.data.songs.map(song => {
+    return this.props.data.songs.map((song) => {
       return (
-        <li>
+        <li key={song.id} className="collection-item">
           {song.title}
         </li>
       )
@@ -16,9 +16,9 @@ class SongList extends Component {
   render() {
     if (!this.props.data.loading) {
       return (
-        <div>
+        <ul className="collection">
           {this.renderSongs()}
-        </div>
+        </ul>
       )
     } else {
       return (
@@ -31,6 +31,7 @@ class SongList extends Component {
 const query = gql`
   {
     songs {
+      id
       title
     }
   }
