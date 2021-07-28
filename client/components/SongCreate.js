@@ -23,6 +23,7 @@ class SongCreate extends Component {
         title: this.state.title
       }
     })
+    .then(() => hashHistory.push('/'))
   }
 
   render() {
