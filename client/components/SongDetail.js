@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class SongDetail extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <div>
