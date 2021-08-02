@@ -8,7 +8,10 @@ class SongDetail extends Component {
   }
 
   render() {
-    console.log(this.props);
+    const { song } = this.props.data;
+
+    if (!song) { return <div>Loading...</div>; }
+
     return (
       <div>
         <h3>Song Detail</h3>
