@@ -4,7 +4,9 @@ import { graphql } from 'react-apollo';
 
 class LyricList extends Component {
   onLike(id) {
-    console.log(id);
+    this.props.mutate({
+      variables: { id }
+    })
   }
 
   renderLyrics() {
